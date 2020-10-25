@@ -19,13 +19,11 @@ stats_adg443 = stats_calc(adg443_testOrig,adg443p');
 
 load('ap_aph_decomp_dataset.mat');% 348 stations from CCRR dataset
 % Input is a(lambda) at six wavelengths
-% net_ap_aph_decomp and net_ap_ad_decomp are the neural networks with optimized weights
+% net_ap_aph_decomp is the neural network with optimized weights
 % and bias values
 aph443_apdecomp = net_ap_aph_decomp(ap_orig_ccrr');
-ad443_apdecomp = net_ap_ad_decomp(ap_orig_ccrr');
 
 % calculate statistics by comparing measured and neural network output of
 % aph(443) 
 stats_aph443_apdecomp = stats_calc(aph443_orig_ccrr,aph443_apdecomp');
-stats_ad443_apdecomp = stats_calc(ad443_orig_ccrr,ad443_apdecomp');
-fprintf('Deriving aph443 and ad443 from particulate absorption spectrum completed\n')
+fprintf('Deriving aph443 from particulate absorption spectrum completed\n')
